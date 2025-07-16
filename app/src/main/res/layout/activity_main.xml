@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HiJackie Chan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <Spinner
+        android:id="@+id/appSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/activitySelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Position X:"
+            android:paddingEnd="4dp"/>
+
+        <EditText
+            android:id="@+id/posXInput"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:maxLines="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Position Y:"
+            android:paddingStart="16dp"
+            android:paddingEnd="4dp"/>
+
+        <EditText
+            android:id="@+id/posYInput"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="100"
+            android:maxLines="1"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startOverlayBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Démarrer la superposition"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/stopOverlayBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arrêter la superposition"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/launchActivityBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lancer l'activité sélectionnée" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note: Exploitable sur les versions d'Android inférieur à 11"
+        android:textSize="12sp"
+        android:layout_marginTop="24dp"
+        android:textColor="#666666" />
+
+
+</LinearLayout>
