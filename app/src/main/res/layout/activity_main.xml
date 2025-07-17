@@ -26,6 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"/>
 
+    <Button
+        android:id="@+id/launchActivityBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lancer l'activité sélectionnée" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,10 +88,16 @@
         android:layout_marginBottom="16dp" />
 
     <Button
-        android:id="@+id/launchActivityBtn"
+        android:id="@+id/startFakeKeyboardBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lancer l'activité sélectionnée" />
+        android:text="Démarrer le faux clavier" />
+
+    <Button
+        android:id="@+id/stopFakeKeyboardBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arrêter le faux clavier" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,6 +106,5 @@
         android:textSize="12sp"
         android:layout_marginTop="24dp"
         android:textColor="#666666" />
-
 
 </LinearLayout>

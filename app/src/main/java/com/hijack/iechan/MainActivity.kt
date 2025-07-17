@@ -27,6 +27,9 @@ class MainActivity : Activity() {
     private var overlayView: View? = null
     private var overlayParams: WindowManager.LayoutParams? = null
     private var isOverlayShowing = false
+    private var fakeKeyboardView: View? = null
+    private var fakeKeyboardParams: WindowManager.LayoutParams? = null
+
 
     private var selectedAppPackage: String? = null
     private var selectedActivity: ComponentName? = null
@@ -47,6 +50,21 @@ class MainActivity : Activity() {
 
         val posXInput = findViewById<EditText>(R.id.posXInput)
         val posYInput = findViewById<EditText>(R.id.posYInput)
+
+        val startFakeKeyboardBtn = findViewById<Button>(R.id.startFakeKeyboardBtn)
+        val stopFakeKeyboardBtn = findViewById<Button>(R.id.stopFakeKeyboardBtn)
+
+        startFakeKeyboardBtn.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
+                requestOverlayPermission()
+            } else {
+                showFakeKeyboard()
+            }
+        }
+
+        stopFakeKeyboardBtn.setOnClickListener {
+            hideFakeKeyboard()
+        }
 
         startOverlayBtn.setOnClickListener {
             posX = posXInput.text.toString().toIntOrNull() ?: 0
@@ -240,6 +258,51 @@ class MainActivity : Activity() {
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
     }
+
+    fun showFakeKeyboard() {
+        if (fakeKeyboardView != null) return
+
+        val inflater = LayoutInflater.from(this)
+        fakeKeyboardView = inflater.inflate(R.layout.fake_keyboard_layout, null)
+
+        // Obtenir la hauteur de l'écran
+        val displayMetrics = resources.displayMetrics
+        val screenHeight = displayMetrics.heightPixels
+
+        // Définir la hauteur du clavier à 40% de l'écran
+        val keyboardHeight = (screenHeight * 0.4).toInt()
+
+        val params = WindowManager.LayoutParams(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            keyboardHeight,
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+            else
+                WindowManager.LayoutParams.TYPE_PHONE,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
+            PixelFormat.TRANSLUCENT
+        )
+
+        params.gravity = Gravity.BOTTOM
+        windowManager?.addView(fakeKeyboardView, params)
+    }
+
+
+    private fun hideFakeKeyboard() {
+        fakeKeyboardView?.let {
+            windowManager?.removeView(it)
+            fakeKeyboardView = null
+            fakeKeyboardParams = null
+        }
+    }
+
+    fun closeFakeKeyboard(view: View) {
+        hideFakeKeyboard()
+    }
+
+
 
     private fun getExportedActivities(packageName: String): List<ComponentName> {
         val pm = packageManager

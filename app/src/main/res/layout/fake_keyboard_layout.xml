@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fakeKeyboardLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#88CCCCCC"
+    android:padding="4dp">
+
+    <!-- Ligne 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button style="@style/FakeKey" android:text="1" />
+        <Button style="@style/FakeKey" android:text="2" />
+        <Button style="@style/FakeKey" android:text="3" />
+        <Button style="@style/FakeKey" android:text="4" />
+        <Button style="@style/FakeKey" android:text="5" />
+        <Button style="@style/FakeKey" android:text="6" />
+        <Button style="@style/FakeKey" android:text="7" />
+        <Button style="@style/FakeKey" android:text="8" />
+        <Button style="@style/FakeKey" android:text="9" />
+        <Button style="@style/FakeKey" android:text="0" />
+    </LinearLayout>
+
+    <!-- Ligne 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button style="@style/FakeKey" android:text="A" />
+        <Button style="@style/FakeKey" android:text="Z" />
+        <Button style="@style/FakeKey" android:text="E" />
+        <Button style="@style/FakeKey" android:text="R" />
+        <Button style="@style/FakeKey" android:text="T" />
+        <Button style="@style/FakeKey" android:text="Y" />
+        <Button style="@style/FakeKey" android:text="U" />
+        <Button style="@style/FakeKey" android:text="I" />
+        <Button style="@style/FakeKey" android:text="O" />
+        <Button style="@style/FakeKey" android:text="P" />
+    </LinearLayout>
+
+    <!-- Ligne 3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button style="@style/FakeKey" android:text="Q" />
+        <Button style="@style/FakeKey" android:text="S" />
+        <Button style="@style/FakeKey" android:text="D" />
+        <Button style="@style/FakeKey" android:text="F" />
+        <Button style="@style/FakeKey" android:text="G" />
+        <Button style="@style/FakeKey" android:text="H" />
+        <Button style="@style/FakeKey" android:text="J" />
+        <Button style="@style/FakeKey" android:text="K" />
+        <Button style="@style/FakeKey" android:text="L" />
+        <Button style="@style/FakeKey" android:text="M" />
+    </LinearLayout>
+
+    <!-- Ligne 4 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button style="@style/FakeKey" android:text="⇧" />
+        <Button style="@style/FakeKey" android:text="W" />
+        <Button style="@style/FakeKey" android:text="X" />
+        <Button style="@style/FakeKey" android:text="C" />
+        <Button style="@style/FakeKey" android:text="V" />
+        <Button style="@style/FakeKey" android:text="B" />
+        <Button style="@style/FakeKey" android:text="N" />
+        <Button style="@style/FakeKey" android:text="⌫" />
+    </LinearLayout>
+
+    <!-- Ligne 5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button style="@style/FakeKey" android:text="!#1" />
+        <Button style="@style/FakeKey" android:text="," />
+        <Button style="@style/FakeKey" android:text="ESPACE" android:layout_weight="2" />
+        <Button style="@style/FakeKey" android:text="." />
+        <Button
+            style="@style/FakeKey"
+            android:text="↵"
+            android:onClick="closeFakeKeyboard" />
+    </LinearLayout>
+
+
+</LinearLayout>
