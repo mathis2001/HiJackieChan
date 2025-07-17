@@ -72,12 +72,14 @@
         android:orientation="horizontal">
 
         <Button style="@style/FakeKey" android:text="⇧" />
+        <Button style="@style/FakeKey" android:text=" " />
         <Button style="@style/FakeKey" android:text="W" />
         <Button style="@style/FakeKey" android:text="X" />
         <Button style="@style/FakeKey" android:text="C" />
         <Button style="@style/FakeKey" android:text="V" />
         <Button style="@style/FakeKey" android:text="B" />
         <Button style="@style/FakeKey" android:text="N" />
+        <Button style="@style/FakeKey" android:text=" " />
         <Button style="@style/FakeKey" android:text="⌫" />
     </LinearLayout>
 
@@ -90,7 +92,9 @@
 
         <Button style="@style/FakeKey" android:text="!#1" />
         <Button style="@style/FakeKey" android:text="," />
+        <Button style="@style/FakeKey" android:text=" " />
         <Button style="@style/FakeKey" android:text="ESPACE" android:layout_weight="2" />
+        <Button style="@style/FakeKey" android:text=" " />
         <Button style="@style/FakeKey" android:text="." />
         <Button
             style="@style/FakeKey"
